@@ -9,9 +9,13 @@ import { getstatus } from 'src/getstatus/entities/getstatus.entity';
 import { UsersService } from 'src/users/users.service';
 import { GetstatusService } from 'src/getstatus/getstatus.service';
 import { HttpModule } from '@nestjs/axios';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
   imports: [
+    ConfigModule.forRoot({
+      isGlobal: true, // rend le module disponible globalement
+    }),
     TypeOrmModule.forFeature([Paiement,Users,Lien,getstatus]),
     HttpModule
     

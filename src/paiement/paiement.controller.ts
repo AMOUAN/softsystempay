@@ -57,13 +57,27 @@ export class PaiementController {
 
           switch (data.canal) {
             case 'mtn':
-            const response= this.paiementService.processPaiementMtn(data);
-            return response;
+            const responsemtn= this.paiementService.processPaiementMtn(data);
+            return responsemtn;
               break;
             case 'wave':
-              
+              const responsewave= this.paiementService.processWavePayment(data);
+              return responsewave;
               break;
-            default:
+
+              case 'orange':
+              const responseorange= this.paiementService.processPaiementOrange(data);
+              return responseorange;
+
+              break;
+
+              case 'moov':
+                const responsemoov= this.paiementService.processPaiementMoov(data);
+                return responsemoov;
+                
+                break;
+  
+        
               // Logique par défaut si aucune correspondance de canal n'est trouvée
           }
           
