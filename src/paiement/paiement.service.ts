@@ -200,10 +200,7 @@ const randomString = randomBytesBuffer.toString('hex').slice(0, length);
       client_reference: value.orderId,
     };
 
-    const headers = {
-      'Content-Type': 'application/json',
-      Authorization: 'Bearer wave_ci_prod_ww6OH_zfGHgjT5k-P7EIb_g-vZQQS76fwxWiAQmlgcdqEG4RTKwZYrj6PHYU3gJi_vKXc9u0ahubNMEm11Iiy_cwKRtaBHSsBg',
-    };
+  
 
     try {
       const response = await this.httpService.post(url, data, { headers }).toPromise();
@@ -222,11 +219,7 @@ const randomString = randomBytesBuffer.toString('hex').slice(0, length);
   async accestoken2(): Promise<string> {
     const authHeader = Buffer.from('PidStPgLIZt4jkFQ3AxVjla1GKpMblX:', 'base64');
     try {
-      const response = await axios.post('https://api.orange.com/oauth/v3/token', 'grant_type=client_credentials', {
-        headers: {
-          'Authorization': 'Basic UGlkU3RQbEdJWVp0NGprRlEzQXhWamxhMUdLcE1ibFg6QmppTXpMU0RBMmdhQUZpSQ==',
-          'Content-Type': 'application/x-www-form-urlencoded'
-        }
+        
       });
 
       
